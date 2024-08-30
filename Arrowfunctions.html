@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Arrow Functions
+        Global and Local Scope
+        Closures
+        Pure Functions
+        Call Stack
+        </h4>
+</body>
+<script>
+    // 1. Arrow function
+      const multiplyByTwo =  (num) => {
+         return  num*2
+        
+      }
+      console.log(multiplyByTwo(20))
+      console.log(multiplyByTwo(12))
+      console.log(multiplyByTwo(5))
+    
+      const isEven = (num) => {
+        if(num %2 == 0){
+            return 'true'
+        }else{
+            return 'false'
+        }
+      }
+      console.log(isEven(`${21}`))
+      console.log(isEven(`${3988}`))
+      console.log(isEven(`${56}`))
+
+  // 2.Global and Local scope
+     
+      var globalVar = 10;
+        function scopeTest() {
+        var localVar = 20;
+        console.log(globalVar)
+        console.log(localVar)
+      }
+        scopeTest();
+        console.log(globalVar);
+
+    
+  // 3.Closures
+
+         function outerFunction(){
+            let outerVar = 5;
+            function innerFunction(){
+                return outerVar;
+          }
+            return innerFunction();
+          }
+          let Closure = outerFunction()
+          console.log(Closure)
+
+
+
+  // 4.Pure Functions
+        function sum(a,b){
+            return a+b;
+         }
+          let sum1=sum(10,20);
+          let sum2=sum(10,206);
+              console.log(`sum 1 is ${sum1},sum 2 is ${sum2}`)
+
+        function multiply(x,y){
+            return x*y;
+        }
+          let mul1=multiply(9,6);
+          let mul2=multiply(9,6);
+          console.log(`mul 1 is ${mul1},mul 2 is ${mul2}`)
+
+    
+  // 5.Call stack
+
+        function functionA(){
+              functionB()
+        }
+        function functionB(){
+              functionC()
+        }
+        function functionC(){
+               console.log("In functionC")
+        }
+              functionA()
+    
+
+
+</script>
+</html>
